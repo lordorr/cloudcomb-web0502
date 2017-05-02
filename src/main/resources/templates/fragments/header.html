@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div class="headerBox" th:fragment="nav">
+    <div id="nav" class="navbar navbar-default navbar-fixed-top">
+        <i>
+            <img src="../../img/navbar/logo_single.png" th:src="@{/img/navbar/logo_single.png}"/>
+        </i>
+        <ul>
+            <li>
+                <a href="#">
+                    <span class="glyphicon glyphicon-home"></span>
+                </a>
+            </li>
+            <li class="dropdown">
+                <a data-toggle="dropdown" href="#">
+                    <span class="glyphicon glyphicon-list"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">用户资料</a></li>
+                    <li><a href="#">系统设置</a></li>
+                    <li><a href="#">退出系统</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a data-toggle="dropdown" href="#">
+                    <span class="glyphicon glyphicon-envelope"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">收件箱</a></li>
+                    <li><a href="#">发送箱</a></li>
+                    <li><a href="#">草稿箱</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="glyphicon 	glyphicon glyphicon-bell"></span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="glyphicon glyphicon-user"></span>
+                    <span>欢迎你，</span><span th:text="${username}"></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>首页</title>
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.css" th:href="@{/css/bootstrap.css}">
+    <link rel="stylesheet" type="text/css"  href="../../css/navbar/nav.css" th:href="@{/css/navbar/nav.css}">
+    <link rel="stylesheet" type="text/css"  href="../../css/menu/menu.css" th:href="@{/css/menu/menu.css}">
+    <link rel="stylesheet" type="text/css"  href="../../css/layout/layout.css" th:href="@{/css/layout/layout.css}">
+    <link rel="stylesheet" type="text/css"  href="../../css/layout/footer.css" th:href="@{/css/layout/footer.css}">
+</head>
+<body>
+<div class="headerBox" th:replace="fragments/header::nav"></div>
+<!--<div style="margin: 55px 0 0 0;">
+<table class="table ">
+    <tr>
+        <td  style="background: white;width: 15%" >
+            <div th:insert="fragments/leftMenu::menu"></div>
+        </td>
+        <td style="background: yellow;width: 85%">
+            <div layout:fragment="content"></div>
+        </td>
+    </tr>
+</table>
+</div>-->
+<div id="leftMenu" th:insert="fragments/leftMenu::menu"></div>
+<div id="content" layout:fragment="content"></div>
+<!--<div th:insert="fragments/footer::copy"></div>-->
+</body>
+</html>

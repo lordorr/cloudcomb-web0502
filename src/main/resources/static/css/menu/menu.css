@@ -1,0 +1,184 @@
+body{
+    margin: 5px;
+}
+
+/*主体 菜单栏（main_menu）*/
+#main_menu{
+    width:100%;
+    height:600px;
+    border-right:1px solid #E8E8E8;
+}
+/*菜单栏顶部 （main_menu_top）*/
+#main_menu_top{
+    width:100%;
+    margin: 0 auto;
+   // height:30px;
+    line-height: 30px;
+    padding: 1px;
+}
+#main_menu_top>ul{
+    width:100%;
+    display: inline-block;
+    list-style: none;
+    padding-left: 0;
+}
+#main_menu_top>ul>li{
+    width: 25%;
+    height:50px;
+    line-height: 50px;
+    border-right:2px solid #fff;
+    float: left;
+    text-align: center;
+}
+#main_menu_top>ul>li>span{
+    color:#fff;
+    text-decoration: none;
+}
+#main_menu_top>ul>li>span:hover{
+    color:#000;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+}
+#main_menu_top>ul>li:first-child{
+    background: #C6E746;
+}
+#main_menu_top>ul>li:nth-child(2){
+    background: #ebcccc;
+}
+#main_menu_top>ul>li:nth-child(3){
+    background: #FFCC33;
+}
+#main_menu_top>ul>li:last-child{
+    background: #b2dba1;
+}
+/*菜单栏内容 （main_menu_content）*/
+#main_menu_content{
+    margin-top:5px;
+    width: 100%;
+    float:left;
+    box-sizing: border-box;
+}
+/*一级菜单样式修改*/
+#accordion .panel-title a:after,
+#accordion .panel-title a.collapsed:after{
+    content: "<";
+    font-size: 15px;
+    position: absolute;
+    left: 180px;
+    transform: rotate(-90deg);
+    transition: all 0.3s ease 0s;
+}
+#accordion .panel-title a.collapsed:after{
+    transform: rotate(0deg);
+}
+#accordion>.panel-default>.panel-heading>.panel-title>p{
+    font-size:14px;
+}
+#accordion>.panel-default>.panel-heading>.panel-title>a{
+    display: inline-block;
+    font-size: 14px;
+    width: 170px;
+}
+#accordion>.panel-default>.panel-heading>.panel-title>a:hover{
+    color:#FFE33C;
+}
+#accordion>.panel-default>.panel-heading>.panel-title>a>i,
+#accordion>.panel-default>.panel-heading>.panel-title>p>i{
+    margin-right: 10px;
+}
+.panel-heading {
+    padding:6px 15px;
+}
+a:focus,a:hover{
+    text-decoration: none;
+}
+.panel-group .panel+.panel {
+    margin-top: 0;
+}
+.panel-default {
+    border-color: transparent;
+    background:transparent;
+}
+.panel-default>.panel-heading{
+    background-color: transparent;
+    border:0;
+}
+
+.panel-default>.panel-heading>.panel-title>a>span:first-child{
+    margin-right:15px;
+}
+.panel-default>.panel-heading>.panel-title>a>span:last-child{
+    float:right;
+    font-size: 5px;
+    font-weight: inherit;
+}
+.panel-default>.panel-heading>.panel-title>p>.glyphicon-flag{
+    color: #898C3C;
+}
+.panel-default>.panel-heading>.panel-title>a>.glyphicon-asterisk{
+    color: #89CF3C;
+}
+.panel-default>.panel-heading>.panel-title>a>.glyphicon-gift{
+    color: #89A885;
+}
+.panel-default>.panel-heading>.panel-title>a>.glyphicon-cog{
+    color: #89EF85;
+}
+.panel-default>.panel-heading>.panel-title>a>.glyphicon-qrcode{
+    color: #A01412;
+}
+.panel-default>.panel-heading>.panel-title>a>.glyphicon-credit-card{
+    color: #E24712;
+}
+.panel-default>.panel-heading>.panel-title>a>.glyphicon-comment{
+    color: #E24793;
+}
+.panel-default>.panel-heading>.panel-title>a>.glyphicon-hdd{
+    color: #E247FF;
+}
+.panel-default>.panel-heading>.panel-title>a>.glyphicon-tag{
+    color: #FF8C3C;
+}
+.panel-group {
+    margin-bottom: 2px;
+}
+.collapse {
+    margin-bottom: 5px;
+}
+
+
+/*二级菜单样式修改*/
+.panel-group .panel-heading+.panel-collapse>.panel-body {
+    border-top:0;
+    font-size: 13px;
+    margin-top: 6px;
+}
+
+.panel-body {
+    padding: 2px 2px 0 3px;
+}
+#accordion>.panel-default>.panel-collapse>.panel-body>p{
+    display: inline-block;
+    width: 50px;
+    font-size: 12px;
+    margin-left: 40px;
+    margin-bottom: 0;
+    color:#31B7A3;
+
+}
+#accordion>.panel-default>.panel-collapse>.panel-body>p:hover{
+    cursor: pointer;
+    color:#000;
+    transition: all 0.5s ease 0s;
+}
+
+
+
+
+
+
+
+
+
+
+

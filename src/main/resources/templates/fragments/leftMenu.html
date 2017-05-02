@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html" xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<div id="main" class="leftMenu" th:fragment="menu">
+    <div id="main_menu">
+        <div id="main_menu_top">
+            <button class="btn btn-info" onclick="changeMenus();" title="切换菜单">
+                <i class="glyphicon glyphicon-pencil"></i>
+            </button>
+            <button class="btn btn-success" title="UI实例" onclick="window.open('static/html_UI/html');">
+                <i class="glyphicon glyphicon-inbox"></i>
+            </button>
+            <button id="adminzidian" class="btn btn-warning" title="">
+                <i class="glyphicon glyphicon-book"></i>
+            </button>
+            <button class="btn btn-danger">
+                <i class="glyphicon glyphicon-signal"></i>
+            </button>
+        </div>
+        <div id="main_menu_content">
+            <div id="accordion" class="panel-group" th:each="menus:${menuLists}">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                           <!-- <p th:if="${menus.menuId}==1" th:href="${menus.menuUrl}">-->
+                                <i th:if="${menus.menuId}==1" th:class="${menus.menuIcon}">
+                                    <small th:text="${menus.menuName}" style="font-size: 15px;color: #00AA88"></small>
+                                </i>
+                           <!-- </p>-->
+                            <a th:if="${menus.menuId}&gt;1" class="collapsed" role="button" data-toggle="collapse"
+                               data-parent="#accordion"
+                               th:href="${'#'+ menus.menuId}" aria-expanded="false">
+                                <i th:class="${menus.menuIcon}"></i>
+                                <small th:text="${menus.menuName}" style="font-size: 13px"></small>
+                            </a>
+                        </h4>
+                    </div>
+                    <div th:id="${menus.menuId}" th:if="${menus.menuId}&gt;1" class="panel-collapse collapse">
+                        <div class="panel-body" th:each="menu:${menus.subMenu}">
+                            <p>
+                                <a th:href="${menu.menuUrl}"><span th:text="${menu.menuName}"></span></a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

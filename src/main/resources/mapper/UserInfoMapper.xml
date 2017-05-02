@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.finex.cloudera.web.mapper.UserMapperTest">
+ 
+  <select id="findUserInfo" resultType="com.finex.cloudera.web.entity.UserInfo">
+    select * from user;
+  </select>
+
+  <select id="findUserByNameAndPswd" parameterType="HashMap" resultType="com.finex.cloudera.web.entity.UserInfo">
+    select * from user WHERE username=#{name} and password=#{password};
+  </select>
+
+
+  <resultMap id="baseUserResultMap" type="HashMap">
+    <result column="username" property="userName" jdbcType="VARCHAR"></result>
+    <result column="password" property="password" jdbcType="VARCHAR"></result>
+  </resultMap>
+
+  <select id="findUserById" parameterType="INTEGER" resultMap="baseUserResultMap">
+    SELECT username,password FROM user WHERE id=#{id}
+  </select>
+  
+
+ 
+</mapper>

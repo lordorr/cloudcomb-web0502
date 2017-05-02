@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>登录系统</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" href="../../css//bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/login/signin.css}" href="../../css/login/signin.css">
+</head>
+
+<body>
+
+<div class="signin">
+    <div class="signin-head">
+        <img src="img/test/head_120.png" alt="" class="img-circle">
+    </div>
+    <form class="form-signin" role="form" method="post" action="/signin" th:action="@{/signin}">
+        <!--        <span id="error_username"></span>
+                <div th:switch="${msg}">
+                    <em th:case=401>用户不存在</em>
+                    <em th:case=402>用户被锁定</em>
+                    <em th:case=403>密码错误</em>
+                    <em th:case=409>用户/密码错误</em>
+                    <em th:case="*"></em>
+                </div>-->
+        <input id="uname" type="text" class="form-control" name="username" placeholder="用户名"/>
+        <span id="error_password"></span>
+        <input id="pwd" type="password" class="form-control" name="password" placeholder="密码" required/>
+        <button  class="btn btn-sm btn-warning btn-block">登录</button>
+        <label class="checkbox">
+            <input type="checkbox" value="remember-me"> 记住我
+            <a href="#">注册 >></a>
+        </label>
+    </form>
+</div>
+<div class="footer">
+    <div style="text-align: center;">
+        <span>©2012-2017 <a href="http://www.prolog-int.com">INTPLOG, Inc.</a> All rights reserved.</span>
+    </div>
+</div>
+<script type="text/javascript">
+
+    //用户名输入框聚焦时，提示内容不显示
+    uname.onfocus = function () {
+        $("#error_username").empty();
+    };
+    //用户名输入框失焦时
+    uname.onblur = function () {
+        //声明一个变量uname，表示输入的用户名的值
+        //声明一个变量unameLength，表示输入的用户名长度
+        //声明一个变量unameReg，表示用户名的正则
+        var uname = document.getElementById("uname").value;
+        var unameReg = /^[a-zA-Z]\w{5,19}$/;
+        var unameLength = uname.length;
+        //如果用户名长度为0时，不显示提示
+        if (unameLength == 0) {
+            $("#error_username").empty();
+        }
+        //否则，如果用户名格式输入不正确，则显示提示
+        else if (unameReg.test(uname) == false) {
+            document.getElementById("error_username").innerHTML = "<font color='red' size='-1'>字母开头,长度在6-20之间的字符,数字和下划线";
+        }
+        //否则不显示提示
+        else {
+            $("#error_username").empty();
+        }
+    };
+
+    //密码输入框聚焦时，提示内容不显示
+    pwd.onfocus = function () {
+        $("#error_password").empty();
+    };
+    //密码框失去焦点时
+    pwd.onblur = function () {
+        //声明一个变量pwd，表示输入的密码的值
+        //声明一个变量pwdReg，表示密码的正则
+        //声明一个变量pwdLength，表示输入的密码长度
+        var pwd = document.getElementById("pwd").value;
+        var pwdReg = /\w{4,18}/;
+        var pwdLength = pwd.length;
+        //如果密码长度为0时，不显示提示
+        if (pwdLength == 0) {
+            $("#error_password").empty();
+        }
+        //否则，如果密码格式输入不正确，则显示提示
+        else if (pwdReg.test(pwd) == false) {
+            document.getElementById("error_password").innerHTML = "<font color='red' size='-1'>长度在6-18之间的数字";
+        }
+        //否则不显示提示
+        else {
+            $("#error_password").empty();
+        }
+    }
+</script>
+<script type="text/javascript" src="../../js/jquery.min.js"></script>
+<script type="text/javascript" th:src="@{/js/jquery.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
+</body>
+
+</html>

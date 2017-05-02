@@ -1,0 +1,22 @@
+/*
+Date：2017.4.13
+author:lordorr
+修改内容：
+1 2017.4.14 version1.0
+*/
+/*v1.0 增加xx属性*/
+/*定义向左浮动，实现多个div并排排列*/
+#leftMenu,#content{
+    margin-top: 55px;
+    float: left;
+    box-sizing: border-box;
+    height: auto;
+}
+/*定义左边菜单栏的宽度：15%*/
+#leftMenu{
+    width: 15%;
+}
+/*定义右边内容栏的宽度：85%*/
+#content{
+    width: 85%;
+}

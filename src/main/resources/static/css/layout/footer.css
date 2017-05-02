@@ -1,0 +1,15 @@
+/*
+Date：2017.4.13
+author:lordorr
+修改内容：
+*/
+
+/*设置底部样式*/
+.footerBox{
+    height: 20px;
+    width:100%;
+    position: fixed;
+    bottom: 0px;
+    text-align: center;
+    background: #9acfea;
+}
